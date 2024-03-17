@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link th:href="@{/style.css}" rel="stylesheet">
+        <title>Departments</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Departments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="department : ${departments}">
+                    <td th:text="${department.getName()}">Department Name</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
