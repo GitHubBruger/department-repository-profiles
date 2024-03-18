@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>kea.iabr</groupId>
-    <artifactId>department-repository-interface</artifactId>
+    <artifactId>department-repository-profiles</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>department-repository-interface</name>
     <description>department-repository-interface</description>
@@ -37,6 +37,13 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
