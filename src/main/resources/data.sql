@@ -14,3 +14,4 @@ INSERT INTO EMP_DEPT.DEPT (DEPTNO, DNAME, LOC) VALUES
                                           (20, 'RESEARCH_H2', 'DALLAS'),
                                           (30, 'SALES_H2', 'CHICAGO'),
                                           (40, 'OPERATIONS_H2', 'BOSTON');
+
