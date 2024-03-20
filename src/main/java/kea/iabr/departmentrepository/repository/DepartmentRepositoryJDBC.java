@@ -20,14 +20,15 @@ public class DepartmentRepositoryJDBC {
 
     public List<Department> findAll() {
         List<Department> departments = new ArrayList<Department>();
-        try (Connection con = DriverManager.getConnection(db_url, username, pwd)) {
-            String SQL = "SELECT * FROM EMP_DEPT.DEPT;";
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(SQL);
-            while (rs.next()) {
-                int deptNo = rs.getInt("DEPTNO");
-                String name = rs.getString("DNAME");
-                String location = rs.getString("LOC");
+        Connection connection = ConnectionManager.getConnection(db_url, username, pwd);
+        String SQLQuery = "SELECT * FROM EMP_DEPT.DEPT;";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery)) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int deptNo = resultSet.getInt("DEPTNO");
+                String name = resultSet.getString("DNAME");
+                String location = resultSet.getString("LOC");
                 departments.add(new Department(deptNo, name, location));
             }
             return departments;
